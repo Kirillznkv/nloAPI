@@ -16,9 +16,6 @@ go build -o client CMD/client/main.go
 ```
 pg_ctl -D /usr/local/var/postgres start
 createdb -h localhost postgres
-psql postgres
-create user nloUsr;
-grant all privileges on database postgres to nlousr;
 ```
 ### run app
 ```

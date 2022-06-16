@@ -2,16 +2,16 @@ package main
 
 import (
 	"context"
-	pb "ex01/API/nlo"
 	"flag"
 	"fmt"
-	"github.com/go-pg/pg/v10"
-	"github.com/go-pg/pg/v10/orm"
+	"github.com/go-pg/pg"
+	"github.com/go-pg/pg/orm"
 	"gonum.org/v1/gonum/stat"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"io"
 	"log"
+	pb "nloAPI/API/nlo"
 	"time"
 )
 
@@ -120,7 +120,7 @@ func createAnomalyTable(db *pg.DB) error {
 func connectDB() *pg.DB {
 	db := pg.Connect(&pg.Options{
 		Addr:     ":5432",
-		User:     "kshanti",
+		User:     "nlousr",
 		Database: "postgres",
 	})
 	return db

@@ -1,7 +1,6 @@
 package main
 
 import (
-	pb "ex01/API/nlo"
 	"fmt"
 	"github.com/google/uuid"
 	"gonum.org/v1/gonum/stat/distuv"
@@ -10,6 +9,7 @@ import (
 	"log"
 	"math/rand"
 	"net"
+	pb "nloAPI/API/nlo"
 	"time"
 )
 

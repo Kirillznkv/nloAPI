@@ -2,19 +2,20 @@ package main
 
 import (
 	"log"
+	"math/rand"
 	"net"
+	"time"
 
 	"google.golang.org/grpc"
 
-	pb "github.com/Kirillznkv/nloAPI/pkg/api" //generated proto file
+	"github.com/Kirillznkv/nloAPI/internal/app/apiserver"
+	pb "github.com/Kirillznkv/nloAPI/pkg/api"
 )
 
-type GRPCServer struct {
-} //del
-
 func main() {
+	rand.Seed(int64(time.Now().Nanosecond()))
 	grpcServer := grpc.NewServer()
-	srv := &GRPCServer{}
+	srv := &apiserver.ImplementedNloServer{}
 	pb.RegisterNloServer(grpcServer, srv)
 	l, err := net.Listen("tcp", ":8080")
 	if err != nil {

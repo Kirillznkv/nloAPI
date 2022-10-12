@@ -1,0 +1,5 @@
+download migrate:
+    brew install golang-migrate
+
+created:
+    migrate create -ext sql -dir migrations create_anomaly_table

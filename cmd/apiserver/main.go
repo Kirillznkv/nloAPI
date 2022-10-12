@@ -1,11 +1,16 @@
 package main
 
 import (
-	pb "github.com/Kirillznkv/nloAPI/pkg" //generated proto file
-	"google.golang.org/grpc"
 	"log"
 	"net"
+
+	"google.golang.org/grpc"
+
+	pb "github.com/Kirillznkv/nloAPI/pkg/api" //generated proto file
 )
+
+type GRPCServer struct {
+} //del
 
 func main() {
 	grpcServer := grpc.NewServer()

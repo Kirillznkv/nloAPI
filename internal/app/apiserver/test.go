@@ -1,5 +1,5 @@
 package apiserver
 
-func f(a int) {
+func Foo(a int) {
 	a++
 }

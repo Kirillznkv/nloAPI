@@ -4,7 +4,7 @@ package api;
 
 import "google/protobuf/timestamp.proto";
 //option go_package = "github.com/Kirillznkv/nloAPI/pkg;pkg";
-option go_package = "../pkg";
+option go_package = "../pkg/api";
 
 service Nlo {
   rpc Do(Request) returns (stream Response) {}

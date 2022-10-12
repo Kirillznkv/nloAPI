@@ -3,7 +3,8 @@ syntax = "proto3";
 package api;
 
 import "google/protobuf/timestamp.proto";
-option go_package = "github.com/Kirillznkv/nloAPI/pkg;pkg";
+//option go_package = "github.com/Kirillznkv/nloAPI/pkg;pkg";
+option go_package = "../pkg";
 
 service Nlo {
   rpc Do(Request) returns (stream Response) {}

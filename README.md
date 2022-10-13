@@ -52,5 +52,4 @@ So, if you start a server and a client (PostgreSQL should be already running on 
 
 If Louise is right, these anomalies could be the key to a first contact with the aliens. But it is also a pretty direct approach for cases when you need to detect anomalies on a stream of data, which Go can be efficiently used for.
 
-[GORM](https://gorm.io/index.html)
 

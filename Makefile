@@ -20,6 +20,7 @@ build: $(GENERATED_PROTO_CODE) db_up
 
 .PHONY: db_up
 db_up:
+	@printf $(GREEN)
 	docker run --rm --name my_postgres \
 	-e POSTGRES_PASSWORD=qwerty1234 \
 	-e POSTGRES_USER=kshanti \

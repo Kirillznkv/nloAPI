@@ -23,7 +23,7 @@ func New(config *store.Config) *Client {
 }
 
 func (s *Client) Start() error {
-	//defer s.store.Close()
+	defer s.store.Close()
 	if err := s.configureStore(); err != nil {
 		return err
 	}
@@ -55,7 +55,7 @@ func connectToServ(addr string) *grpc.ClientConn {
 }
 
 func (s *Client) findAnomaly(conn *grpc.ClientConn) {
-	forecastArr := make([]float64, 0, 1000)
+	forecastArr := make([]float64, 1000)
 	var mean, std float64
 	ch := make(chan *pb.Response)
 	i := 0
@@ -70,6 +70,7 @@ func (s *Client) findAnomaly(conn *grpc.ClientConn) {
 			if i == 1000 {
 				forecastArr = nil
 			}
+			i++
 		} else if data.Frequency < (mean-std) || data.Frequency > (mean+std) {
 			if err := s.store.Anomaly().Create(&model.Anomaly{
 				SessionId: data.SessionId,
@@ -79,7 +80,6 @@ func (s *Client) findAnomaly(conn *grpc.ClientConn) {
 				log.Fatal(err)
 			}
 		}
-		i++
 	}
 }
 

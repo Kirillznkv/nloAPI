@@ -1,2 +1,2 @@
-migrate_dirpath = "db/migrations"
-database_url = "host=localhost port=5432 user=kshanti password=qwerty1234 dbname=c sslmode=disable"
+migrate_dirpath = "file://db/migrations"
+database_url = "postgres://kshanti:qwerty1234@localhost:5432/anomaly_db?sslmode=disable&search_path=public"
